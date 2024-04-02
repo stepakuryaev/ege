@@ -53,32 +53,65 @@
 #     if f(n) == '1115':
 #         print(n, " ", f(n))
 
-def f(N):
-    n = bin(N)[2:]
+# def f(N):
+#     n = bin(N)[2:]
+#
+#     m = bin(5)[2:]
+#     d = bin(7)[2:]
+#
+#
+#
+#     if N%5 != 0:
+#         n = n + str(1)
+#     else:
+#         n = n + m
+#
+#     new_N = int(n, 2)
+#
+#
+#
+#     if new_N%7 !=0:
+#         n = n + str(1)
+#     else:
+#         n = n + d
+#
+#     res = int(n, 2)
+#     return res
+#
+#
+# for n in range(1, 1000000):
+#     if f(n) < 1855663:
+#         print(n)
 
-    m = bin(5)[2:]
-    d = bin(7)[2:]
+
+
+def f(n):
+    a = bin(n)[2:]
+    #123 - 3 разряда
+    #010010 - 6 разрядов
+
+    #for i in a:
+    sum = 0
+    for i in range(len(a)):
+        sum = int(a[i]) + sum
+
+    a = a + str(sum % 2)
+
+    sum = 0
+    for i in range(len(a)):
+        sum = int(a[i]) + sum
+
+    a = a + str(sum % 2)
+
+    return int(a, 2)
+
+#7 - 111 : 1) 3 % 2 = 1 -> 1111 ; 2) 1111 -> 4 ; 3) 4 % 2 = 0 -> 11110 -> 2+4+8+16 = 30
+print(f(18))
 
 
 
-    if N%5 != 0:
-        n = n + str(1)
-    else:
-        n = n + m
-
-    new_N = int(n, 2)
 
 
 
-    if new_N%7 !=0:
-        n = n + str(1)
-    else:
-        n = n + d
-
-    res = int(n, 2)
-    return res
 
 
-for n in range(1, 1000000):
-    if f(n) < 1855663:
-        print(n)
