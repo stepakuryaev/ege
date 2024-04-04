@@ -85,31 +85,52 @@
 
 
 
-def f(n):
-    a = bin(n)[2:]
-    #123 - 3 разряда
-    #010010 - 6 разрядов
+# def f(n):
+#     a = bin(n)[2:]
+#     #123 - 3 разряда
+#     #010010 - 6 разрядов
+#
+#     #for i in a:
+#     sum = 0
+#     for i in range(len(a)):
+#         sum = int(a[i]) + sum
+#
+#     a = a + str(sum % 2)
+#
+#     sum = 0
+#     for i in range(len(a)):
+#         sum = int(a[i]) + sum
+#
+#     a = a + str(sum % 2)
+#
+#     return int(a, 2)
+#
+# #7 - 111 : 1) 3 % 2 = 1 -> 1111 ; 2) 1111 -> 4 ; 3) 4 % 2 = 0 -> 11110 -> 2+4+8+16 = 30
+# print(f(18))
+#
 
-    #for i in a:
-    sum = 0
-    for i in range(len(a)):
-        sum = int(a[i]) + sum
 
-    a = a + str(sum % 2)
+def f(k):
+    a = str(k)
+    #было число 65123 стала строка "65123", то есть работают индексы
+    sum1 = int(a[0]) + int(a[2]) + int(a[4])
+    sum2 = int(a[1]) + int(a[3])
 
-    sum = 0
-    for i in range(len(a)):
-        sum = int(a[i]) + sum
+    #r1, r2 = sorted([ch1, ch2])  # "[::-1] #[start:end:step] [1, 2, 3, 6, 4] [1:3:-1]= [3,2]
 
-    a = a + str(sum % 2)
+    r = sorted([sum1, sum2])
+    res = str(r[0]) + str(r[1])
 
-    return int(a, 2)
-
-#7 - 111 : 1) 3 % 2 = 1 -> 1111 ; 2) 1111 -> 4 ; 3) 4 % 2 = 0 -> 11110 -> 2+4+8+16 = 30
-print(f(18))
-
+    return res
+#f(65123)
+for i in range(40000, 60000):
+    print(i, " | ", f(i))
 
 
+
+50979
+
+9676
 
 
 
