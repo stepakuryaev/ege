@@ -17,28 +17,56 @@
 #
 # print(count)
 
-file = open("9_2.txt")
+# file = open("9_2.txt")
+# count = 0
+# for line in file:
+#     a = [int(x) for x in line.split()]
+#     macs = max(a)
+#     mini = min(a)
+#     ind_min = a.index(mini)
+#     ind_macs = a.index(macs)
+#
+#     sum_1 = (macs + mini)**2
+#
+#     sum = 0
+#     for k in range(len(a)):
+#         if k != ind_macs and k != ind_min:
+#             sum += (a[k])**2
+#
+#
+#     if sum_1>sum:
+#         count += 1
+# print(count)
+
+
+
+
+file = open("9_3.txt")
 count = 0
 for line in file:
     a = [int(x) for x in line.split()]
-    macs = max(a)
+    # for a in len(a):
+    #     min
     mini = min(a)
-    ind_min = a.index(mini)
-    ind_macs = a.index(macs)
-
-    sum_1 = (macs + mini)**2
-
-    sum = 0
-    for k in range(len(a)):
-        if k != ind_macs and k != ind_min:
-            sum += (a[k])**2
 
 
-    if sum_1>sum:
-        count += 1
-print(count)
+    if a.count(mini) > 1:#первое условие минимальное число встречается в строке ровно один раз;
+        continue
+
+    podhodit = False #второе условие хотя бы одно число в строке повторяется более одного раза;
+    for x in a:
+        if a.count(x) >= 2:
+            podhodit = True
+    if not podhodit:
+        continue
 
 
+
+
+
+
+
+    count+=1
 
 
 
