@@ -7,6 +7,7 @@
 '''
 
 #(x ∨ y) → (y ≡ z)
+
 # def f(x, y, z):
 #     return (x or y) <= (y == z)
 #
