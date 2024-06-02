@@ -59,4 +59,8 @@ print(count, summm)
 
 
 
+<<<<<<< HEAD
 #####for i in range(len(a) - 3):
+=======
+for i in range(len(a) - 3):
+>>>>>>> origin/master
