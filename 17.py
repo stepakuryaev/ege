@@ -59,4 +59,4 @@ print(count, summm)
 
 
 
-#for i in range(len(a) - 3):
+#####for i in range(len(a) - 3):
